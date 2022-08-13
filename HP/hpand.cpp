@@ -34,7 +34,7 @@ while(S[stop]==0)
  {
     stop++;
  }
- for(int i=maxlen-1;i>=stop;i--)
+ for(int i=maxlen;i>=stop;i--)
  {
     cout<<S[i];
  }
