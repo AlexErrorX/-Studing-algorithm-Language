@@ -19,24 +19,19 @@ int main (){
   }
  int maxlen=max(lena,lenb);//和的长度
   //加法
-  int t=0;
  for(int i=0;i<maxlen;i++)
- {  
-  S[i]+=a[i]+b[i];
-   if(S[i]>=10) 
-    {
-    S[i+1]+=1;
-    S[i]-=10;
-    }
- }
- int stop=0;
-while(S[stop]==0)
  {
-    stop++;
- }
- for(int i=maxlen;i>=stop;i--)
+    S[i]+=a[i]+b[i];//错误点1，这里不要用临时变量t 如： 99+9   如果是十位运算，那么t=a[i]+b[i]结果是9，不进位
+    S[i+1]+=S[i]/10;
+    S[i]%=10;
+ } 
+ while (S[maxlen]==0&&maxlen>0)
  {
-    cout<<S[i];
+    maxlen--;
  }
+for(int i=maxlen;i>=0;i--)
+{
+   cout<<S[i];
+}
    return 0;
 }
