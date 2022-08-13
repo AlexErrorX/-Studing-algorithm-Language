@@ -22,12 +22,15 @@ int main (){
   int t=0;
  for(int i=0;i<maxlen;i++)
  {  
-   S[i]=a[i]+b[i]+t;
-   t=S[i]/10;
-   S[i]%=10;
+  S[i]+=a[i]+b[i];
+   if(S[i]>=10) 
+    {
+    S[i+1]+=1;
+    S[i]-=10;
+    }
  }
  int stop=0;
- while(S[stop]==0)
+while(S[stop]==0)
  {
     stop++;
  }
