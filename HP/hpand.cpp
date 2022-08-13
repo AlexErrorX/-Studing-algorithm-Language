@@ -19,11 +19,11 @@ int main (){
   }
  int maxlen=max(lena,lenb);//和的长度
   //加法
+  int t=0;
  for(int i=0;i<maxlen;i++)
- {
-   int t=(a[i]+b[i])/10; 
-   S[i]+=a[i]+b[i];
-   S[i+1]+=t;
+ {  
+   S[i]=a[i]+b[i]+t;
+   t=S[i]/10;
    S[i]%=10;
  }
  int stop=0;
